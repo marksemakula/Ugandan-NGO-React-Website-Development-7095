@@ -316,11 +316,11 @@ const Impact = () => {
             >
               <div className="text-center mb-6">
                 <img
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b1ab?w=200&h=200&fit=crop&crop=face"
+                  src="./images/RuthNagudi.JPG"
                   alt="Success Story"
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
                 />
-                <h3 className="text-lg font-marcellus font-bold text-gray-900">Mary Akello</h3>
+                <h3 className="text-lg font-marcellus font-bold text-gray-900">Ruth Nagudi</h3>
                 <p className="text-gray-600 font-marcellus">Digital Skills Graduate</p>
               </div>
               <p className="text-gray-600 font-marcellus text-center leading-relaxed">
@@ -337,11 +337,11 @@ const Impact = () => {
             >
               <div className="text-center mb-6">
                 <img
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face"
+                  src="./images./BethNakayenze.jpg"
                   alt="Success Story"
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
                 />
-                <h3 className="text-lg font-marcellus font-bold text-gray-900">Grace Namuli</h3>
+                <h3 className="text-lg font-marcellus font-bold text-gray-900">Beth Nakayenze</h3>
                 <p className="text-gray-600 font-marcellus">Leadership Program Alumni</p>
               </div>
               <p className="text-gray-600 font-marcellus text-center leading-relaxed">
@@ -358,11 +358,11 @@ const Impact = () => {
             >
               <div className="text-center mb-6">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
+                  src="./images/JeninahNalukenge.JPG"
                   alt="Success Story"
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
                 />
-                <h3 className="text-lg font-marcellus font-bold text-gray-900">Sarah Opio</h3>
+                <h3 className="text-lg font-marcellus font-bold text-gray-900">Jeninah Nalukenge</h3>
                 <p className="text-gray-600 font-marcellus">Microfinance Beneficiary</p>
               </div>
               <p className="text-gray-600 font-marcellus text-center leading-relaxed">
