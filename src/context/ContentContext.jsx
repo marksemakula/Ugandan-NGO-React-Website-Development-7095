@@ -65,24 +65,24 @@ const initialContent = {
   team: [
     {
       id: 1,
-      name: "Sarah Nakamya",
-      role: "Executive Director",
+      name: "Ruth Nagudi",
+      role: "Co-Founder & Executive Director",
       bio: "Passionate advocate for women's rights with 15+ years of experience",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b1ab?w=400"
+      image: "./images/RuthNagudi.JPG"
     },
     {
       id: 2,
-      name: "Grace Achieng",
-      role: "Program Manager",
+      name: "Beth Nakayenze",
+      role: "Co-founder & Head of Programs",
       bio: "Expert in community development and program implementation",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+      image: "./images/BethNakayenze.jpg"
     },
     {
       id: 3,
-      name: "Rebecca Namuli",
-      role: "Finance Director",
-      bio: "Financial management specialist with NGO expertise",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
+      name: "Lorna Nagawa",
+      role: "Legal Officer",
+      bio: "Seasoned legal specialist with NGO expertise",
+      image: "./images/JeninahNalukenge.JPG"
     }
   ],
   impact: {

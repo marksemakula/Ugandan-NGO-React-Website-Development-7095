@@ -1,12 +1,68 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiUsers, FiTarget, FiAward } from 'react-icons/fi';
+import { FiArrowRight, FiUsers, FiTarget, FiAward, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import AnimatedCounter from '../components/AnimatedCounter';
 import { useContent } from '../context/ContentContext';
 
 const Home = () => {
   const { content } = useContent();
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Carousel images data
+  const carouselImages = [
+    {
+      src: "/images/BethNakayenze.jpg",
+      alt: "Women empowerment workshop",
+      caption: "Leadership training for women entrepreneurs"
+    },
+    {
+      src: "/images/RuthNagudi.JPG",
+      alt: "Community meeting",
+      caption: "Community engagement sessions"
+    },
+    {
+      src: "/images/JeninahNalukenge.JPG",
+      alt: "Education program",
+      caption: "Education and skills development"
+    },
+    {
+      src: "/images/KathyNamutenze.JPG",
+      alt: "Health initiative",
+      caption: "Health and wellness programs"
+    },
+    {
+      src: "/images/RuthNagudi.JPG",
+      alt: "Technology training",
+      caption: "Digital skills for women"
+    },
+    {
+      src: "/images/BethNakayenze.jpg",
+      alt: "Agriculture project",
+      caption: "Sustainable agriculture initiatives"
+    },
+    {
+      src: "/images/JeninahNalukenge.JPG",
+      alt: "Networking event",
+      caption: "Women networking and mentorship"
+    }
+  ];
+
+  // Auto-advance slides
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+  };
 
   return (
     <motion.div
@@ -47,17 +103,84 @@ const Home = () => {
                 </Link>
               </div>
             </motion.div>
+
+            {/* Carousel Section */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative h-full min-h-[400px] w-full"
             >
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop"
-                alt="African women in leadership"
-                className="rounded-lg shadow-2xl"
-              />
+              <div className="relative w-full h-full rounded-lg overflow-hidden shadow-2xl">
+                {/* Slides */}
+                <div className="relative h-full w-full">
+                  {carouselImages.map((image, index) => (
+                    <motion.div
+                      key={index}
+                      className="absolute inset-0 w-full h-full overflow-hidden"
+                      initial={{ opacity: 0, scale: 1.1 }}
+                      animate={{ 
+                        opacity: index === currentSlide ? 1 : 0,
+                        scale: index === currentSlide ? 1 : 1.1,
+                        zIndex: index === currentSlide ? 10 : 0
+                      }}
+                      transition={{ 
+                        duration: 0.8,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <motion.img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-full object-cover min-h-[400px]"
+                        loading="lazy"
+                        initial={{ scale: 1.1 }}
+                        animate={{ 
+                          scale: 1,
+                          transition: {
+                            duration: 8,
+                            ease: "linear"
+                          }
+                        }}
+                        style={{ transformOrigin: 'center center' }}
+                      />
+                      {image.caption && (
+                        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent text-white p-6">
+                          <p className="font-marcellus text-lg">{image.caption}</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-primary rounded-full p-2 z-20 hover:bg-opacity-80 transition-all"
+                  aria-label="Previous slide"
+                >
+                  <FiChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-primary rounded-full p-2 z-20 hover:bg-opacity-80 transition-all"
+                  aria-label="Next slide"
+                >
+                  <FiChevronRight size={24} />
+                </button>
+
+                {/* Indicators */}
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-20">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-primary w-6' : 'bg-white bg-opacity-50'}`}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>

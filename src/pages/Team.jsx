@@ -114,24 +114,32 @@ const Team = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Dr. Amina Hassan",
-                role: "Gender Policy Expert",
-                image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400"
+                name: "Ruth Nagudi",
+                role: "Media & Communications, Gender Policy Expert",
+                image: "./images/RuthNagudi.JPG"
               },
               {
-                name: "Prof. John Kiprotich",
-                role: "Development Economics",
-                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400"
+                name: "Beth Nakayenze",
+                role: "Head of Programs",
+                image: "./images/BethNakayenze.jpg"
               },
               {
-                name: "Ms. Fatima Al-Rashid",
+                name: "Lorna Nagawa",
+                role: "Legal Officer",
+                image: "./images/LornaNagawa.jpg"
+              },
+              {
+                name: "Jeninah Nalukenge",
                 role: "Technology Innovation",
-                image: "https://images.unsplash.com/photo-1494790108755-2616b612b1ab?w=400"
+                image: "./images/JeninahNalukenge.JPG"
               },
               {
-                name: "Dr. Samuel Mwangi",
-                role: "Community Development",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+                name: "Kathy Namutenze",
+                role: "Project Officer",
+                image: "./images/KathyNamutenze.JPG"
+              },
+              {
+                name: ""
               }
             ].map((advisor, index) => (
               <motion.div
