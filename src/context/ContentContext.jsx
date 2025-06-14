@@ -28,21 +28,21 @@ const initialContent = {
       id: 1,
       title: "Digital Skills Training",
       description: "Comprehensive digital literacy programs for women entrepreneurs",
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800",
+      image: "./images/digitalskillstraining.jpg",
       status: "Active"
     },
     {
       id: 2,
       title: "Women in Leadership",
       description: "Leadership development and mentorship programs",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800",
+      image: "./images/womeninleadership.jpg",
       status: "Active"
     },
     {
       id: 3,
       title: "Economic Empowerment",
       description: "Microfinance and business development support",
-      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800",
+      image: "./images/economic_empowerment.jpg",
       status: "Completed"
     }
   ],
