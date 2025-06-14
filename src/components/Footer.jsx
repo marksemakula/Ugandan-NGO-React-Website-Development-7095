@@ -11,13 +11,13 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1749834926913-WLA.png" 
+                src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1749886809045-WLAlogo.png" 
                 alt="Women Lens Africa" 
                 className="h-10 w-auto brightness-0 invert"
               />
               <div>
                 <h3 className="text-lg font-marcellus font-bold">Women Lens Africa</h3>
-                <p className="text-sm text-gray-300 font-marcellus">Empowering Women Through Innovation</p>
+                <p className="text-sm text-gray-300 font-marcellus">Women Leadership, Data, Digital Rights</p>
               </div>
             </div>
             <p className="text-gray-300 mb-4 font-marcellus">

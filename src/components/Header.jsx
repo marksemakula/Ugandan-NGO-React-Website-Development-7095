@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1749834926913-WLA.png" 
+              src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1749886809045-WLAlogo.png" 
               alt="Women Lens Africa" 
               className="h-12 w-auto"
             />
@@ -32,7 +32,7 @@ const Header = () => {
                 Women Lens Africa
               </h1>
               <p className="text-sm text-primary font-marcellus">
-                Empowering Women Through Innovation
+                Women Leadership, Data, Digital Rights
               </p>
             </div>
           </Link>
