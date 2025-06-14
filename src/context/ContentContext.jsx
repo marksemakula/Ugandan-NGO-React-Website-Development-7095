@@ -1,0 +1,131 @@
+import React, { createContext, useContext, useState } from 'react';
+
+const ContentContext = createContext();
+
+export const useContent = () => {
+  const context = useContext(ContentContext);
+  if (!context) {
+    throw new Error('useContent must be used within a ContentProvider');
+  }
+  return context;
+};
+
+const initialContent = {
+  about: {
+    title: "About Women Lens Africa",
+    mission: "To empower women and girls in Africa through innovative programs, capacity building, and sustainable development initiatives.",
+    vision: "A world where every African woman has equal opportunities to thrive and lead in their communities.",
+    description: "Women Lens Africa is a non-governmental organization based in Uganda, dedicated to advancing gender equality and women's empowerment across the continent. We work at the intersection of technology, education, and economic empowerment to create lasting change.",
+    values: [
+      "Empowerment through education and skills development",
+      "Innovation in addressing gender-specific challenges",
+      "Community-driven sustainable solutions",
+      "Inclusive leadership and participation"
+    ]
+  },
+  projects: [
+    {
+      id: 1,
+      title: "Digital Skills Training",
+      description: "Comprehensive digital literacy programs for women entrepreneurs",
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800",
+      status: "Active"
+    },
+    {
+      id: 2,
+      title: "Women in Leadership",
+      description: "Leadership development and mentorship programs",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800",
+      status: "Active"
+    },
+    {
+      id: 3,
+      title: "Economic Empowerment",
+      description: "Microfinance and business development support",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800",
+      status: "Completed"
+    }
+  ],
+  news: [
+    {
+      id: 1,
+      title: "Women Lens Africa Launches New Digital Initiative",
+      content: "We are excited to announce our new digital empowerment program...",
+      date: "2024-01-15",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+    },
+    {
+      id: 2,
+      title: "Partnership with Local Universities",
+      content: "Building strategic partnerships to expand our reach...",
+      date: "2024-01-10",
+      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800"
+    }
+  ],
+  team: [
+    {
+      id: 1,
+      name: "Sarah Nakamya",
+      role: "Executive Director",
+      bio: "Passionate advocate for women's rights with 15+ years of experience",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b1ab?w=400"
+    },
+    {
+      id: 2,
+      name: "Grace Achieng",
+      role: "Program Manager",
+      bio: "Expert in community development and program implementation",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400"
+    },
+    {
+      id: 3,
+      name: "Rebecca Namuli",
+      role: "Finance Director",
+      bio: "Financial management specialist with NGO expertise",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400"
+    }
+  ],
+  impact: {
+    womenTrained: 2500,
+    programAreas: 8,
+    communities: 45,
+    partnerships: 25
+  }
+};
+
+export const ContentProvider = ({ children }) => {
+  const [content, setContent] = useState(initialContent);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const updateContent = (section, data) => {
+    setContent(prev => ({
+      ...prev,
+      [section]: data
+    }));
+  };
+
+  const login = (email, password) => {
+    // Simple authentication - in production, use proper authentication
+    if (email === "admin@womenlens.africa" && password === "WLA2024Admin!") {
+      setIsAuthenticated(true);
+      return true;
+    }
+    return false;
+  };
+
+  const logout = () => {
+    setIsAuthenticated(false);
+  };
+
+  return (
+    <ContentContext.Provider value={{
+      content,
+      updateContent,
+      isAuthenticated,
+      login,
+      logout
+    }}>
+      {children}
+    </ContentContext.Provider>
+  );
+};
