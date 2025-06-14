@@ -1,5 +1,5 @@
-import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ContentProvider } from './context/ContentContext';
 import Header from './components/Header';
@@ -14,12 +14,24 @@ import Impact from './pages/Impact';
 import Admin from './pages/Admin';
 import './App.css';
 
+// ScrollToTop component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <ContentProvider>
       <Router>
         <div className="min-h-screen bg-white font-marcellus">
           <Header />
+          <ScrollToTop /> {/* Add this line */}
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home />} />
