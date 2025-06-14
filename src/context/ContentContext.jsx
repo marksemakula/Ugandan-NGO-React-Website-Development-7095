@@ -52,14 +52,14 @@ const initialContent = {
       title: "Women Lens Africa Launches New Digital Initiative",
       content: "We are excited to announce our new digital empowerment program...",
       date: "2024-01-15",
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800"
+      image: "./images/launch.jpg"
     },
     {
       id: 2,
       title: "Partnership with Local Universities",
       content: "Building strategic partnerships to expand our reach...",
       date: "2024-01-10",
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800"
+      image: "./images/university.jpg"
     }
   ],
   team: [
