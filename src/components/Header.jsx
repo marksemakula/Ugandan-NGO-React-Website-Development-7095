@@ -23,7 +23,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center space-x-3">
             <img 
-              src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1749886809045-WLAlogo.png" 
+              src="/WLAlogo.png"  // Changed to local reference
               alt="Women Lens Africa" 
               className="h-12 w-auto"
             />
@@ -54,19 +54,23 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
-            {/* Donate Button */}
-            <Link
-              to="/donate"
-              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-marcellus font-semibold transition-colors duration-200 ml-4"
+            {/* Enhanced Donate Button */}
+            <a
+              href="https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-lg font-marcellus font-semibold transition-all duration-200 ml-4 shadow-md hover:shadow-lg"
+              aria-label="Donate to Women Lens Africa"
             >
-              Donate
-            </Link>
+              Donate Now
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary"
+            className="md:hidden p-2 rounded-md text-gray-700 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>
@@ -86,23 +90,26 @@ const Header = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block py-2 font-marcellus font-medium transition-colors duration-200 ${
+                  className={`block py-2 px-4 font-marcellus font-medium transition-colors duration-200 ${
                     location.pathname === item.path
-                      ? 'text-primary'
-                      : 'text-gray-700 hover:text-primary'
+                      ? 'text-primary bg-purple-50 rounded-lg'
+                      : 'text-gray-700 hover:text-primary hover:bg-purple-50 rounded-lg'
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              {/* Mobile Donate Button */}
-              <Link
-                to="/donate"
+              {/* Enhanced Mobile Donate Button */}
+              <a
+                href="https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="block bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-marcellus font-semibold text-center mt-4 transition-colors duration-200"
+                className="block bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg font-marcellus font-semibold text-center mt-4 transition-all duration-200 shadow-md hover:shadow-lg"
+                aria-label="Donate to Women Lens Africa"
               >
-                Donate
-              </Link>
+                Donate Now
+              </a>
             </nav>
           </motion.div>
         )}
