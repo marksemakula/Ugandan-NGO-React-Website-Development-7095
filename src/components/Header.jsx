@@ -38,21 +38,30 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`font-marcellus font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary border-b-2 border-primary'
-                    : 'text-gray-700 hover:text-primary'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`font-marcellus font-medium transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? 'text-primary border-b-2 border-primary'
+                      : 'text-gray-700 hover:text-primary'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+            {/* Donate Button */}
+            <Link
+              to="/donate"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-marcellus font-semibold transition-colors duration-200 ml-4"
+            >
+              Donate
+            </Link>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -65,27 +74,37 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <motion.nav
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             className="md:hidden py-4 border-t"
           >
-            {navItems.map((item) => (
+            <nav className="space-y-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-2 font-marcellus font-medium transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? 'text-primary'
+                      : 'text-gray-700 hover:text-primary'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              {/* Mobile Donate Button */}
               <Link
-                key={item.path}
-                to={item.path}
+                to="/donate"
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-2 font-marcellus font-medium transition-colors duration-200 ${
-                  location.pathname === item.path
-                    ? 'text-primary'
-                    : 'text-gray-700 hover:text-primary'
-                }`}
+                className="block bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-marcellus font-semibold text-center mt-4 transition-colors duration-200"
               >
-                {item.name}
+                Donate
               </Link>
-            ))}
-          </motion.nav>
+            </nav>
+          </motion.div>
         )}
       </div>
     </header>
