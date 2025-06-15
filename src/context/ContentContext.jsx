@@ -80,9 +80,9 @@ const initialContent = {
     {
       id: 3,
       name: "Lorna Nagawa",
-      role: "Legal Officer",
+      role: "Program Manager",
       bio: "Seasoned legal specialist with NGO expertise",
-      image: "./images/JeninahNalukenge.JPG"
+      image: "./images/LornaNagawa1.JPG"
     }
   ],
   impact: {

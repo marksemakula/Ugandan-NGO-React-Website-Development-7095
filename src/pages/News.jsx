@@ -172,7 +172,7 @@ const News = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
               <img
-                src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=800"
+                src="./images/digitaltraining.jpeg"
                 alt="Digital Training Success"
                 className="w-full h-48 object-cover"
               />
@@ -208,7 +208,7 @@ const News = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
               <img
-                src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800"
+                src="./images/communityworkshop.jpg"
                 alt="Community Workshop"
                 className="w-full h-48 object-cover"
               />

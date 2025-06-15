@@ -124,19 +124,19 @@ const Team = () => {
                 image: "./images/BethNakayenze.jpg"
               },
               {
-                name: "Lorna Nagawa",
-                role: "Legal Officer",
-                image: "./images/LornaNagawa.jpg"
+                name: "Kathy Namutenze",
+                role: "Finance & Admin Officer",
+                image: "./images/Karthy.JPG"
               },
               {
                 name: "Jeninah Nalukenge",
-                role: "Technology Innovation",
+                role: "Projects Officer",
                 image: "./images/JeninahNalukenge.JPG"
               },
               {
-                name: "Kathy Namutenze",
-                role: "Project Officer",
-                image: "./images/KathyNamutenze.JPG"
+                name: "Lorna Nagawa",
+                role: "Project Manager",
+                image: "./images/LornaNagawa1.JPG"
               },
               {
                 name: ""
