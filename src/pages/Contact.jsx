@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { FaXTwitter, FaTiktok } from 'react-icons/fa6'; // Added FaXTwitter and FaTiktok
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -119,13 +120,16 @@ const Contact = () => {
                     <FiFacebook size={20} />
                   </a>
                   <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors">
-                    <FiTwitter size={20} />
+                    <FaXTwitter size={18} /> {/* Updated to X (Twitter) icon */}
                   </a>
                   <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors">
                     <FiInstagram size={20} />
                   </a>
                   <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors">
                     <FiLinkedin size={20} />
+                  </a>
+                  <a href="#" className="bg-primary bg-opacity-10 p-3 rounded-lg text-primary hover:bg-primary hover:text-white transition-colors">
+                    <FaTiktok size={18} /> {/* Added TikTok icon */}
                   </a>
                 </div>
               </div>
