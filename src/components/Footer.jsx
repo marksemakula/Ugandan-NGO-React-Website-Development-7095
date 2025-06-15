@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FiFacebook, FiInstagram, FiLinkedin, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FaXTwitter, FaTiktok } from 'react-icons/fa6'; // Added FaXTwitter and FaTiktok
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1749886809045-WLAlogo.png" 
+                src="/WLAlogo.png"  // Changed to local reference
                 alt="Women Lens Africa" 
                 className="h-10 w-auto brightness-0 invert"
               />
@@ -29,13 +30,16 @@ const Footer = () => {
                 <FiFacebook size={20} />
               </a>
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
-                <FiTwitter size={20} />
+                <FaXTwitter size={18} /> {/* Updated to X (Twitter) icon */}
               </a>
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
                 <FiInstagram size={20} />
               </a>
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
                 <FiLinkedin size={20} />
+              </a>
+              <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                <FaTiktok size={18} /> {/* Added TikTok icon */}
               </a>
             </div>
           </div>
