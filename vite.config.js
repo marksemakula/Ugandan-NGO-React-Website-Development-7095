@@ -4,14 +4,22 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/', // Changed from './' to ensure proper absolute paths
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
   },
-   build: {
+  build: {
     outDir: 'dist',
-    sourcemap: true
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined // Ensures single bundle for SPA
+      }
+    }
   },
+  server: {
+    historyApiFallback: true // Important for SPA routing
+  }
 });
