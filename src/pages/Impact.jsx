@@ -337,7 +337,7 @@ const Impact = () => {
             >
               <div className="text-center mb-6">
                 <img
-                  src="./images./BethNakayenze.jpg"
+                  src="./images/BethNakayenze.jpg"
                   alt="Success Story"
                   className="w-20 h-20 rounded-full mx-auto mb-4 object-cover"
                 />
